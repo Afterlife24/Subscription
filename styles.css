@@ -27,10 +27,11 @@ h1,h2, h3 {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
     width: 100%;
     background-color: #FFc72c;
-    padding: 8px 0; /* Reduced height */
+    padding: 8px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -38,18 +39,32 @@ h1,h2, h3 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Container for Navbar Elements */
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Brand Logo and Name */
 .navbar .brand a {
     font-size: 20px;
     color: #000;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
+.navbar .brand .logo {
+    height: 40px;
+    /* Adjust size as needed */
+    margin-right: 8px;
+    /* Space between logo and text */
+    border-radius: 20px;
+}
+
+/* Desktop Navigation Links */
 .navbar .nav-links {
     list-style: none;
     display: flex;
@@ -59,6 +74,7 @@ h1,h2, h3 {
 .navbar .nav-links li a {
     color: #000;
     font-weight: 500;
+    text-decoration: none;
     transition: color 0.3s;
 }
 
@@ -66,7 +82,7 @@ h1,h2, h3 {
     color: #fff;
 }
 
-/* Hamburger Icon */
+/* Hamburger Icon for Mobile View */
 .hamburger {
     display: none;
     font-size: 24px;
@@ -83,8 +99,13 @@ h1,h2, h3 {
     right: 0;
     background-color: #000;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: width 0.5s ease;
     z-index: 2000;
+}
+
+.mobile-menu.show {
+    width: 250px;
+    /* Width of the mobile menu when opened */
 }
 
 .mobile-menu .close-btn {
@@ -96,6 +117,7 @@ h1,h2, h3 {
     cursor: pointer;
 }
 
+/* Mobile Menu Links */
 .mobile-menu .mobile-nav-links {
     padding-top: 60px;
     list-style: none;
@@ -119,10 +141,13 @@ h1,h2, h3 {
 /* Responsive Navbar */
 @media (max-width: 768px) {
     .navbar .nav-links {
-        display: none; /* Hide on smaller screens */
+        display: none;
+        /* Hide navigation links on mobile */
     }
+
     .hamburger {
         display: block;
+        /* Show hamburger icon on mobile */
     }
 }
 
